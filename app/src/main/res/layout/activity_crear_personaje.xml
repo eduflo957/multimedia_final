@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".crearPersonaje">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginVertical="40dp"
+                android:text="Nombre:" />
+
+            <EditText
+                android:id="@+id/editNombre"
+                android:layout_width="177dp"
+                android:layout_height="62dp"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginVertical="40dp"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageClase"
+                android:layout_width="300sp"
+                android:layout_height="300sp"
+                android:layout_marginStart="55sp"
+                app:srcCompat="@drawable/multimedia_t7_inicio2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/boton_mago"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:width="10sp"
+                android:height="10sp"
+                android:text="mago"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/boton_berseker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="berseker"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/boton_guerrero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="guerrero"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/boton_ladron"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="ladron"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/botonSiguiente"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120sp"
+                android:text="Siguiente" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
