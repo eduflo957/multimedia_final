@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.multimedia_final.databinding.ActivityAtributosPersonaje2Binding
 
@@ -18,31 +18,40 @@ class atributosPersonaje2 : AppCompatActivity() {
         val binding = ActivityAtributosPersonaje2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var fuerza = binding.editFuerza.text
-        var lugar = binding.editLugar.text
-        var vida = binding.editVida.text
+        val personajesDBHelper: mySQLiteHelper
+        personajesDBHelper = mySQLiteHelper(this)
+
+        var fuerza = binding.editFuerza.text.toString()
+        var lugar = binding.editLugar.text.toString()
+        var vida = binding.editVida.text.toString()
+        var nombre = intent.getStringExtra("guardarNombre")
+        var clase = intent.getStringExtra("guardarClase")
+        println(nombre + "pantalaaaaaaaaaaaaaaa")
 
         var edad = "-"
         val listaEdad = arrayOf("18", "19", "20", "21", "22", "23", "24", "25")
         val adaptadorEdad = ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEdad)
         binding.spinnerEdad.adapter = adaptadorEdad
-
         binding.spinnerEdad.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                 }
+
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
                     id: Long
                 ) {
-                    edad = listaEdad[position-1]
-                    println("Edad: $edad")
+                    if (position != 0) {
+                        edad = listaEdad[position - 1]
+                        println("Edad: $edad")
+                    } else {
+                        edad = listaEdad[position]
+                        println("Edad: $edad")
+                    }
                 }
-
             }
-
 
         var raza = "-"
         val listaRaza = arrayOf("Goblin", "Enano", "Humano", "Elfo")
@@ -58,17 +67,36 @@ class atributosPersonaje2 : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                raza = listaRaza[position]
-                println("Raza: $raza")
+                if (position != 0) {
+                    raza = listaRaza[position - 1]
+                    println("Raza: $raza")
+                } else {
+                    raza = listaRaza[position]
+                    println("Raza: $raza")
+                }
             }
-
         }
 
-        binding.botonGuardar.setOnClickListener {
-            Toast.makeText(this, "Usuario: poner usuario creado correctamente", Toast.LENGTH_LONG)
-                .show()
+        binding.botonGuardar.setOnClickListener()
+        {
+            fuerza = binding.editFuerza.text.toString()
+            lugar = binding.editLugar.text.toString()
+            vida = binding.editVida.text.toString()
+
+            if (nombre != null) {
+                if (clase != null) {
+                    personajesDBHelper.anyadirDato(
+                        nombre, clase, fuerza, lugar, vida, edad, raza
+                    )
+                }
+            }
+            Toast.makeText(
+                this, "Datos guardados correctamente",
+                Toast.LENGTH_LONG
+            ).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

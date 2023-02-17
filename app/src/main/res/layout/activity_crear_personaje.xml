@@ -43,7 +43,7 @@
                 android:layout_width="300sp"
                 android:layout_height="300sp"
                 android:layout_marginStart="55sp"
-                app:srcCompat="@drawable/multimedia_t7_inicio2" />
+                app:srcCompat="@drawable/img_inicio" />
         </LinearLayout>
 
         <LinearLayout
