@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="30sp"
     tools:context=".elegirPersonaje">
 
     <LinearLayout
@@ -26,12 +27,17 @@
             android:id="@+id/imageView"
             android:layout_width="200sp"
             android:layout_height="200sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
             app:srcCompat="@drawable/img_inicio" />
 
         <TextView
             android:id="@+id/textInfoConsultada"
             android:layout_width="match_parent"
-            android:layout_height="381dp"
-            android:text="TextView" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="30sp"
+            android:gravity="center|center_horizontal|top"
+            android:text="Información consultada: "
+            android:textAlignment="center" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

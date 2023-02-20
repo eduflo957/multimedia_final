@@ -54,6 +54,7 @@ class elegirPersonaje : AppCompatActivity() {
                 binding.textInfoConsultada.append(
                     "Raza: " + cursor.getString(5).toString() + "\n\n"
                 )
+                binding.imageView
             } else {
                 Toast.makeText(
                     this, "No existe ese usuario",
