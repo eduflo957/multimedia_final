@@ -12,15 +12,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.botonCrear.setOnClickListener {
+            println("se aprieta boton")
             val intentCrearPers = Intent(this, crearPersonaje::class.java)
             //intentCrearPers.putExtra("enviarImagenClase", enviarImagenClase)
             startActivity(intentCrearPers)
         }
 
         binding.botonElegir.setOnClickListener {
+            println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             val intentElegirPers = Intent(this, elegirPersonaje::class.java)
             //intentElegirPers.putExtra("enviarImagenClase", enviarImagenClase)
             startActivity(intentElegirPers)
         }
+
+
+
+
     }
 }

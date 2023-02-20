@@ -42,4 +42,6 @@ class mySQLiteHelper(context: Context) : SQLiteOpenHelper(
         db.insert("personajes", null, datos)
         db.close()
     }
+
+
 }
