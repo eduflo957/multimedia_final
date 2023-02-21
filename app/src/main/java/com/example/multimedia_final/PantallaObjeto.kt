@@ -6,12 +6,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.multimedia_final.databinding.ActivityPantallaObjetoBinding
-import com.example.multimedia_t10.Objeto
+/*import com.example.multimedia_t10.Objeto
 import com.example.multimedia_t10.comprobarPeso
-import com.example.multimedia_t10.mochila1
+import com.example.multimedia_t10.mochila1*/
 
 class PantallaObjeto : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+ /*   @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_objeto)
@@ -41,10 +41,7 @@ class PantallaObjeto : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-
-
-
-
     }
+
+    */
 }
