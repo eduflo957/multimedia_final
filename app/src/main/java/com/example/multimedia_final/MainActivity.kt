@@ -25,8 +25,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentElegirPers)
         }
 
-
-
-
     }
 }

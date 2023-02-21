@@ -32,11 +32,13 @@ class mySQLiteHelper(context: Context) : SQLiteOpenHelper(
         val datos = ContentValues()
         datos.put("nombre", nombre)
         datos.put("clase", clase)
+        datos.put("raza", raza)
+        datos.put("edad", edad)
         datos.put("fuerza", fuerza)
         datos.put("lugar", lugar)
         datos.put("vida", vida)
-        datos.put("edad", edad)
-        datos.put("raza", raza)
+
+
 
         val db = this.writableDatabase
         db.insert("personajes", null, datos)

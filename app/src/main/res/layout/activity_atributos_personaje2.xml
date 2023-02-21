@@ -127,6 +127,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="GUARDAR" />
+
+            <Button
+                android:id="@+id/botonJugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jugar" />
+
+            <Button
+                android:id="@+id/botonInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="inicio" />
         </LinearLayout>
 
     </LinearLayout>

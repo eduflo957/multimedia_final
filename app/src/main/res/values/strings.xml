@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">multimedia_final</string>
+    <string name="strMensajeInformacion">Comienza la aventura, pulsa el DADO para avanzar. CUIDADO puedes encontrarte enemigos</string>
 </resources>

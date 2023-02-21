@@ -1,5 +1,6 @@
 package com.example.multimedia_final
 
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -40,21 +41,20 @@ class elegirPersonaje : AppCompatActivity() {
                     "Clase: " + cursor.getString(2).toString() + "\n"
                 )
                 binding.textInfoConsultada.append(
-                    "Fuerza: " + cursor.getString(3).toString() + "\n"
+                    "Raza: " + cursor.getString(3).toString() + "\n"
                 )
                 binding.textInfoConsultada.append(
-                    "Lugar: " + cursor.getString(4).toString() + "\n"
+                    "Edad: " + cursor.getString(4).toString() + "\n"
                 )
                 binding.textInfoConsultada.append(
-                    "Vida: " + cursor.getString(5).toString() + "\n"
+                    "Fuerza: " + cursor.getString(5).toString() + "\n"
                 )
                 binding.textInfoConsultada.append(
-                    "Edad: " + cursor.getString(5).toString() + "\n"
+                    "Lugar: " + cursor.getString(5).toString() + "\n"
                 )
                 binding.textInfoConsultada.append(
-                    "Raza: " + cursor.getString(5).toString() + "\n\n"
+                    "Vida: " + cursor.getString(5).toString() + "\n\n"
                 )
-                binding.imageView
             } else {
                 Toast.makeText(
                     this, "No existe ese usuario",
@@ -63,5 +63,13 @@ class elegirPersonaje : AppCompatActivity() {
             }
         }
         binding.editNombreBuscado.setText("")
+        binding.botonJugarElegir.setOnClickListener {
+            val intentJugar = Intent(this, PantallaJugarAleatorio::class.java)
+            startActivity(intentJugar)
+        }
+        binding.botonInicioElegir.setOnClickListener {
+            val intentInicio = Intent(this, MainActivity::class.java)
+            startActivity(intentInicio)
+        }
     }
 }

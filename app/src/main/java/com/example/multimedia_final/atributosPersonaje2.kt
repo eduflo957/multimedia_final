@@ -36,18 +36,17 @@ class atributosPersonaje2 : AppCompatActivity() {
             object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                 }
-
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View?,
-                    position: Int,
+                    positionEdad: Int,
                     id: Long
                 ) {
-                    if (position != 0) {
-                        edad = listaEdad[position - 1]
+                    if (positionEdad != 0) {
+                        edad = listaEdad[positionEdad]
                         println("Edad: $edad")
                     } else {
-                        edad = listaEdad[position]
+                        edad = listaEdad[positionEdad]
                         println("Edad: $edad")
                     }
                 }
@@ -57,21 +56,21 @@ class atributosPersonaje2 : AppCompatActivity() {
         val listaRaza = arrayOf("Goblin", "Enano", "Humano", "Elfo")
         val adaptadorRaza = ArrayAdapter(this, android.R.layout.simple_spinner_item, listaRaza)
         binding.spinnerRaza.adapter = adaptadorRaza
-        binding.spinnerEdad.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        binding.spinnerRaza.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
-                position: Int,
+                positionRaza: Int,
                 id: Long
             ) {
-                if (position != 0) {
-                    raza = listaRaza[position - 1]
+                if (positionRaza != 0) {
+                    raza = listaRaza[positionRaza]
                     println("Raza: $raza")
                 } else {
-                    raza = listaRaza[position]
+                    raza = listaRaza[positionRaza]
                     println("Raza: $raza")
                 }
             }
@@ -86,7 +85,7 @@ class atributosPersonaje2 : AppCompatActivity() {
             if (nombre != null) {
                 if (clase != null) {
                     personajesDBHelper.anyadirDato(
-                        nombre, clase, fuerza, lugar, vida, edad, raza
+                        nombre, clase, raza, edad, fuerza, lugar, vida
                     )
                 }
             }
@@ -94,9 +93,20 @@ class atributosPersonaje2 : AppCompatActivity() {
                 this, "Datos guardados correctamente",
                 Toast.LENGTH_LONG
             ).show()
+        }
+
+        binding.botonInicio.setOnClickListener()
+        {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        binding.botonJugar.setOnClickListener()
+        {
+            val intent = Intent(this, elegirPersonaje::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
